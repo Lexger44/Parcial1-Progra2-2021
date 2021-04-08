@@ -11,13 +11,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Alfa
+ * @author F0rr3ly
  */
-public class serveltprueba extends HttpServlet {
+public class operacion1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,12 +31,34 @@ public class serveltprueba extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet operacion1</title>");
+            out.println("</head>");
+            out.println("<body>");
             String nombreS;
-            HttpSession sesion = request.getSession();
-            nombreS = request.getParameter("nombreA");
-            sesion.setAttribute("nombre", nombreS);
-            response.sendRedirect("perico.jsp");
- 
+            nombreS = request.getParameter("nombreSE");
+            String numero1 = request.getParameter("numeros1");
+            String numero2 = request.getParameter("numeros2");
+            String suma = request.getParameter("Sumar");
+            String resta = request.getParameter("Restar");
+            int resultado = 0;
+            if (suma != null) {
+                resultado = Integer.parseInt(numero1) + Integer.parseInt(numero2);
+                out.println("El resultado de la suma es " + resultado);
+                out.println(nombreS);
+
+            } else {
+                resultado = Integer.parseInt(numero1) - Integer.parseInt(numero2);
+                out.println("El resultado de la resta es " + resultado);
+                out.println(nombreS);
+            }
+            out.println("</body>");
+            out.println("</html>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

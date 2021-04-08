@@ -4,9 +4,17 @@
         <servlet-name>ServeltpruebaName</servlet-name>
         <servlet-class>CarlosAlexis.servlets.serveltprueba</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>operacion1</servlet-name>
+        <servlet-class>CarlosAlexis.servlets.operacion1</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServeltpruebaName</servlet-name>
         <url-pattern>/Serveltprueba.URL</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>operacion1</servlet-name>
+        <url-pattern>/operacion1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
